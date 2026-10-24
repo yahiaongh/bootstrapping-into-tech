@@ -6,7 +6,7 @@
 <body data-page="lesson" data-lesson-id="02"><a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header"><div class="container header-inner"><a class="brand" href="../index.html"><span class="brand-mark">B</span><span>Bootstrapping <em>Into Tech</em></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span><span></span></button><nav id="primary-nav" class="primary-nav" aria-label="Main navigation"><a href="../index.html">Home</a><a href="../index.html#lessons">Lessons</a><a href="../privacy.html">Privacy</a></nav></div></header>
 <main id="main" class="container lesson-layout"><div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="../index.html#lessons">Lessons</a><span>/</span><span aria-current="page">Discrete Mathematics and Logic</span></div>
-<header class="lesson-hero"><p class="eyebrow">LESSON 02 · FOUNDATIONS</p><h1>Discrete Mathematics and Logic</h1><p class="lead">Build precise reasoning with propositions, sets, and relations.</p><p>Discrete mathematics studies structures made of distinct objects. Logic helps express and test claims; sets organize collections; relations describe connections between objects. These ideas underpin algorithms, databases, digital circuits, and formal verification.</p><div class="meta-row"><span>Estimated reading time: 8–12 min</span><a class="button secondary" href="../pdfs/02-discrete-mathematics-and-logic.pdf" download data-pdf-download data-file-name="02-discrete-mathematics-and-logic.pdf">Download lesson PDF</a></div></header>
+<header class="lesson-hero"><p class="eyebrow">LESSON 02 · FOUNDATIONS</p><h1>Discrete Mathematics and Logic</h1><p class="lead">Build precise reasoning with propositions, sets, and relations.</p><p>Discrete mathematics studies structures made of distinct objects. Logic helps express and test claims; sets organize collections; relations describe connections between objects. These ideas underpin algorithms, databases, digital circuits, and formal verification.</p><div class="meta-row"><span>Estimated reading time: 8–12 min</span><a class="button secondary" href="../pdfs/02-discrete-mathematics-and-logic.pdf" download data-pdf-download data-file-name="02-discrete-mathematics-and-logic.pdf">Download lesson PDF (FREE)</a></div></header>
 <div class="lesson-columns"><aside class="toc panel" aria-label="Table of contents"><h2>On this page</h2><ol><li><a href="#propositions">1. Propositions and truth values</a></li><li><a href="#connectives">2. Logical connectives</a></li><li><a href="#truth-table">3. Truth tables</a></li><li><a href="#sets">4. Sets and set operations</a></li><li><a href="#relations">5. Relations and applications</a></li><li><a href="#mistakes">6. Common mistakes</a></li></ol></aside><div class="lesson-content"><section class="panel objectives"><h2>Learning objectives</h2><ul><li>Distinguish propositions from questions or commands.</li><li>Evaluate NOT, AND, OR, and implication.</li><li>Use truth tables to test logical statements.</li><li>Apply basic set notation and understand relations.</li></ul></section>
 <section class="content-section" id="propositions"><h2>1. Propositions and truth values</h2>
 <p>A proposition is a declarative statement that is either true or false in a given interpretation. “7 is prime” is true; “10 &lt; 3” is false. “Close the door” is a command, not a proposition. A variable such as P can stand for a proposition.</p>
@@ -16,7 +16,127 @@
 <p>Implication P → Q is false only when P is true and Q is false. Read it as “if P, then Q.” If P is false, the implication is true in classical logic, regardless of Q.</p>
 </section><section class="content-section" id="truth-table"><h2>3. Truth tables</h2>
 <p>A truth table lists every possible truth-value combination. For two propositions P and Q, there are 2² = 4 rows.</p>
-<p>P | Q | P ∧ Q | P ∨ Q | P → Q\nT | T |   T   |   T   |   T\nT | F |   F   |   T   |   F\nF | T |   F   |   T   |   T\nF | F |   F   |   F   |   T</p>
+<div class="table-wrapper">
+  <table class="modern-table">
+    <thead>
+      <tr>
+        <th scope="col">P</th>
+        <th scope="col">Q</th>
+        <th scope="col">P ∧ Q</th>
+        <th scope="col">P ∨ Q</th>
+        <th scope="col">P → Q</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="true">T</td>
+        <td class="true">T</td>
+        <td class="true">T</td>
+        <td class="true">T</td>
+        <td class="true">T</td>
+      </tr>
+      <tr>
+        <td class="true">T</td>
+        <td class="false">F</td>
+        <td class="false">F</td>
+        <td class="true">T</td>
+        <td class="false">F</td>
+      </tr>
+      <tr>
+        <td class="false">F</td>
+        <td class="true">T</td>
+        <td class="false">F</td>
+        <td class="true">T</td>
+        <td class="true">T</td>
+      </tr>
+      <tr>
+        <td class="false">F</td>
+        <td class="false">F</td>
+        <td class="false">F</td>
+        <td class="false">F</td>
+        <td class="true">T</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .modern-table {
+    width: 100%;
+    min-width: 320px;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
+    font-size: 0.95rem;
+  }
+
+  .modern-table thead {
+    background: #176b50;
+    color: #ffffff;
+  }
+
+  .modern-table th {
+    padding: 15px 18px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .modern-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #edf0ed;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+  }
+
+  .modern-table tbody tr:nth-child(even) {
+    background: #f6f9f6;
+  }
+
+  .modern-table tbody tr:hover {
+    background: #eaf4ed;
+  }
+
+  .modern-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .modern-table .true {
+    color: #167447;
+  }
+
+  .modern-table .false {
+    color: #c2413b;
+  }
+
+  @media (max-width: 480px) {
+    .modern-table {
+      font-size: 0.85rem;
+    }
+
+    .modern-table th,
+    .modern-table td {
+      padding: 12px 10px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .modern-table td {
+      transition: none;
+    }
+  }
+</style>
 <p>To compare two expressions, evaluate both columns row by row. If they match on every row, the expressions are logically equivalent.</p>
 </section><section class="content-section" id="sets"><h2>4. Sets and set operations</h2>
 <p>A set is a collection of distinct elements. If A = {1, 2, 3} and B = {3, 4}, then A ∪ B = {1, 2, 3, 4} (union), A ∩ B = {3} (intersection), and A \\ B = {1, 2} (difference). The order of elements does not matter, and repeated elements do not create new members.</p>
@@ -25,7 +145,7 @@
 <p>A relation from A to B is a set of ordered pairs drawn from A × B. For example, “is less than” relates some numbers to others. Relations can be represented as tables, pairs, or graphs. In databases, a relation-like table organizes records by fields.</p>
 <p>A relation on one set may be reflexive (each element relates to itself), symmetric (aRb implies bRa), or transitive (aRb and bRc imply aRc). Check the definition carefully before assigning a property.</p>
 </section><section class="content-section" id="mistakes"><h2>6. Common mistakes</h2>
-<p>• Treating logical OR as exclusive OR when the context uses inclusive OR.\n• Assuming P → Q is the same as Q → P.\n• Confusing an element x ∈ A with a subset A ⊆ B.\n• Counting duplicate set elements more than once.\n• Declaring a relation symmetric or transitive from only one example.</p>
+<p>• Treating logical OR as exclusive OR when the context uses inclusive OR.<br>• Assuming P → Q is the same as Q → P.<br>• Confusing an element x ∈ A with a subset A ⊆ B.<br>• Counting duplicate set elements more than once.<br>• Declaring a relation symmetric or transitive from only one example.</p>
 </section>
 <section class="content-section" id="practice"><h2>7. Practice exercises</h2><p>Try each question before revealing the worked answer.</p><article class="exercise" id="ex1" data-exercise-id="ex1"><h3>EX1</h3><p>If P is false and Q is true, evaluate P ∧ Q, P ∨ Q, and P → Q.</p><button class="text-button answer-toggle" type="button" aria-expanded="false" aria-controls="answer-ex1" data-answer-reveal data-exercise-id="ex1">Reveal answer</button><div class="answer" id="answer-ex1" hidden><p><strong>Answer:</strong> P ∧ Q is false; P ∨ Q is true; P → Q is true because a false antecedent makes the implication true in classical logic.</p></div></article><article class="exercise" id="ex2" data-exercise-id="ex2"><h3>EX2</h3><p>Let A = {a, b, c} and B = {b, c, d}. Find A ∩ B and A ∪ B.</p><button class="text-button answer-toggle" type="button" aria-expanded="false" aria-controls="answer-ex2" data-answer-reveal data-exercise-id="ex2">Reveal answer</button><div class="answer" id="answer-ex2" hidden><p><strong>Answer:</strong> A ∩ B = {b, c}; A ∪ B = {a, b, c, d}.</p></div></article><article class="exercise" id="ex3" data-exercise-id="ex3"><h3>EX3</h3><p>Is the implication P → Q always equivalent to Q → P?</p><button class="text-button answer-toggle" type="button" aria-expanded="false" aria-controls="answer-ex3" data-answer-reveal data-exercise-id="ex3">Reveal answer</button><div class="answer" id="answer-ex3" hidden><p><strong>Answer:</strong> No. For P true and Q false, P → Q is false while Q → P is true.</p></div></article></section>
 <section class="content-section" id="knowledge-check"><h2>8. Quick knowledge check</h2><div class="panel quiz" data-quiz data-correct="b"><p>When P is false, what is the truth value of P → Q in classical logic?</p><form><label class="quiz-option"><input type="radio" name="quiz-02" value="a"> Always false</label><label class="quiz-option"><input type="radio" name="quiz-02" value="b"> Always true</label><label class="quiz-option"><input type="radio" name="quiz-02" value="c"> Same as Q → P</label><button class="button" type="submit">Check answer</button></form><p class="quiz-feedback" aria-live="polite"></p></div></section>
